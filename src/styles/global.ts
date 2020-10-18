@@ -27,12 +27,12 @@ export default createGlobalStyle`
   }
 
   ::-moz-selection {
-    background: #fcd661;
-    color: #000;
+    background: #78D0D3;
+    color: #FFF;
   }
 
   ::selection {
-    background: #fcd661;
-    color: #000;
+    background: #78D0D3;
+    color: #FFF;
   }
 `;
