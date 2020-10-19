@@ -4,7 +4,7 @@ Portfolio created with React, Styled Components and some other buzzwords for edu
 
 ## Live demo
 
-WIP
+[Live demo](https://guidimas.github.io/react-portfolio)
 
 ## Installation
 
