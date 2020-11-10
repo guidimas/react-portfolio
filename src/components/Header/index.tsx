@@ -5,7 +5,11 @@ import { Container, Logo, Navigation, NavigationItem } from './styles';
 
 import logo from '../../assets/logo.svg';
 
-const Header: React.FC = () => {
+interface IHeaderProps {
+  onMenuShown: () => void;
+}
+
+const Header: React.FC<IHeaderProps> = ({ onMenuShown }) => {
   return (
     <Container>
       <Logo>
@@ -17,7 +21,7 @@ const Header: React.FC = () => {
         <NavigationItem>Designer</NavigationItem>
         <NavigationItem>Manager</NavigationItem>
       </Navigation>
-      <FiMenu size={24} />
+      <FiMenu size={24} onClick={onMenuShown} />
     </Container>
   );
 };
