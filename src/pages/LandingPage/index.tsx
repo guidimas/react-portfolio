@@ -27,7 +27,7 @@ const LandingPage: React.FC = () => {
 
   return (
     <Sidebar
-      selectedPage="HOME"
+      selectedPage="LANDING"
       visible={isSidebarVisible}
       onClose={handleOnMenuToggle}
     >

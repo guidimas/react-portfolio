@@ -17,8 +17,8 @@ const Header: React.FC<IHeaderProps> = ({ onMenuShown }) => {
         <h1>Dimas Portfolio</h1>
       </Logo>
       <Navigation>
-        <NavigationItem selected>Developer</NavigationItem>
-        <NavigationItem>Designer</NavigationItem>
+        <NavigationItem selected>Landing</NavigationItem>
+        <NavigationItem>Projects</NavigationItem>
         <NavigationItem>Manager</NavigationItem>
       </Navigation>
       <FiMenu size={24} onClick={onMenuShown} />

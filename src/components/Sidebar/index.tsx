@@ -34,16 +34,16 @@ const Sidebar: React.FC<ISidebarProps> = ({
         </Header>
         <Pages>
           <Page
-            selected={selectedPage === 'DEVELOPER'}
+            selected={selectedPage === 'LANDING'}
             onClick={() => handleNavigateTo('/')}
           >
-            <span>Developer</span>
+            <span>Landing</span>
           </Page>
           <Page
-            selected={selectedPage === 'DESIGNER'}
-            onClick={() => handleNavigateTo('/designer')}
+            selected={selectedPage === 'PROJECTS'}
+            onClick={() => handleNavigateTo('/projects')}
           >
-            <span>Designer</span>
+            <span>Projects</span>
           </Page>
           <Page
             selected={selectedPage === 'MANAGER'}
