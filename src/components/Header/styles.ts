@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 interface INavigationItemProps {
   selected?: boolean;
+  theme: 'light' | 'dark';
 }
 
 export const Container = styled.header`
@@ -71,12 +72,18 @@ export const NavigationItem = styled.button<INavigationItemProps>`
     opacity: 0.7;
   }
 
-  ${({ selected }) =>
-    selected
+  ${({ theme }) =>
+    theme === 'light'
       ? css`
-          color: #78d0d3;
+          color: #574e65;
         `
       : css`
           color: white;
         `}
+
+  ${({ selected }) =>
+    selected &&
+    css`
+      color: #78d0d3;
+    `}
 `;

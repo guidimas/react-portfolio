@@ -7,7 +7,7 @@ import { Page, Pages, Header, Content, Container } from './styles';
 
 interface ISidebarProps {
   visible: boolean;
-  selectedPage: string;
+  selectedPage: 'LANDING' | 'PROJECTS' | 'MANAGER';
   onClose: () => void;
 }
 
