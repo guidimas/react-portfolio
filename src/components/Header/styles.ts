@@ -1,18 +1,37 @@
 import styled, { css } from 'styled-components';
 
+interface IContainerProps {
+  fixed?: boolean;
+  transparent: boolean;
+}
 interface INavigationItemProps {
   selected?: boolean;
   theme: 'light' | 'dark';
 }
 
-export const Container = styled.header`
+export const Container = styled.header<IContainerProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  transition: background 0.2s linear;
 
   margin: 0 auto;
   padding: 1em 2em;
+
+  ${({ fixed }) =>
+    fixed &&
+    css`
+      position: fixed;
+      z-index: 2;
+    `}
+
+  ${({ transparent, fixed }) =>
+    !transparent &&
+    fixed &&
+    css`
+      background: #efefef;
+    `}
 
   svg {
     color: #574e65;
@@ -22,6 +41,13 @@ export const Container = styled.header`
     @media (max-width: 640px) {
       display: block;
     }
+
+    ${({ transparent, fixed }) =>
+      !transparent &&
+      fixed &&
+      css`
+        display: none !important;
+      `}
   }
 `;
 

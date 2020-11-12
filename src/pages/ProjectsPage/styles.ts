@@ -11,6 +11,7 @@ export const Container = styled.div<ISidebarVisible>`
   flex-direction: column;
   align-items: center;
   transition: filter 0.2s linear;
+  background: #efefef;
 
   ${({ sidebarVisible }) =>
     sidebarVisible &&
@@ -19,4 +20,14 @@ export const Container = styled.div<ISidebarVisible>`
         filter: blur(2px);
       }
     `}
+`;
+
+export const Repositories = styled.div`
+  margin-top: 5em;
+  max-width: 700px;
+  padding: 1em;
+
+  > div {
+    margin-bottom: 1.5em;
+  }
 `;

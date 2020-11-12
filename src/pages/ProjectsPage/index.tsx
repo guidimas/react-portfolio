@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Sidebar from '../../components/Sidebar';
 import Header from '../../components/Header';
-import { useRepositories } from '../../hooks/repositories';
+import Repository from '../../components/Repository';
 
-import { Container } from './styles';
+import { useRepositories } from '../../hooks/repositories';
+import { Container, Repositories } from './styles';
 
 const ProjectsPage: React.FC = () => {
   const { loadRepositories, repositories } = useRepositories();
@@ -17,10 +18,6 @@ const ProjectsPage: React.FC = () => {
     setIsSidebarVisible(oldState => !oldState);
   }, []);
 
-  useEffect(() => {
-    console.log(repositories);
-  }, [repositories]);
-
   return (
     <Sidebar
       selectedPage="PROJECTS"
@@ -32,7 +29,13 @@ const ProjectsPage: React.FC = () => {
           onMenuShown={handleOnMenuToggle}
           selectedPage="PROJECTS"
           theme="light"
+          fixed
         />
+        <Repositories>
+          {repositories.map(repository => (
+            <Repository key={repository.full_name} repository={repository} />
+          ))}
+        </Repositories>
       </Container>
     </Sidebar>
   );
