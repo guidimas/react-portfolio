@@ -32,9 +32,17 @@ const ProjectsPage: React.FC = () => {
           fixed
         />
         <Repositories>
-          {repositories.map(repository => (
-            <Repository key={repository.full_name} repository={repository} />
-          ))}
+          {repositories.length === 0 ? (
+            <>
+              <Repository key="0" />
+              <Repository key="1" />
+              <Repository key="2" />
+            </>
+          ) : (
+            repositories.map(repository => (
+              <Repository key={repository.full_name} repository={repository} />
+            ))
+          )}
         </Repositories>
       </Container>
     </Sidebar>

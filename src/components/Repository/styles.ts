@@ -1,12 +1,54 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-export const Container = styled.div`
+interface IContainerProps {
+  loading?: boolean;
+}
+
+const loadingAnimation = keyframes`
+  from {
+    left: -25%;
+    opacity: 1;
+  }
+
+  to {
+    left: 110%;
+    opacity: 0.5;
+  }
+`;
+
+export const Container = styled.div<IContainerProps>`
+  width: 100%;
+  ${({ loading }) =>
+    loading &&
+    css`
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+      width: 100%;
+      display: flex;
+      height: 140px;
+      max-height: 140px;
+      position: relative;
+      overflow: hidden;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 150px;
+        height: 250px;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.03), transparent);
+        position: absolute;
+        transform: rotate(30deg);
+        top: -60px;
+        left: -25%;
+        animation: ${loadingAnimation} 1.5s infinite ease-out;
+      }
+    `}
+
   a {
     background: #fff;
     border-radius: 5px;
     width: 100%;
     padding: 24px;
-    display: block;
     text-decoration: none;
     display: flex;
     align-items: center;

@@ -24,6 +24,7 @@ export const Container = styled.div<ISidebarVisible>`
 
 export const Repositories = styled.div`
   margin-top: 5em;
+  width: 100%;
   max-width: 700px;
   padding: 1em;
 

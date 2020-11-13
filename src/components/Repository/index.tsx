@@ -8,16 +8,13 @@ import IRepository from '../../models/IRepository';
 import { Container, Description } from './styles';
 
 interface IRepositoryProps {
-  repository: IRepository;
+  repository?: IRepository;
 }
 
 const Repository: React.FC<IRepositoryProps> = ({ repository }) => {
-  return (
+  return repository ? (
     <Container>
-      <Link
-        key={repository.full_name}
-        to={`/repositories/${repository.full_name}`}
-      >
+      <Link to={`/repositories/${repository.full_name}`}>
         <img src={repository.owner.avatar_url} alt={repository.owner.login} />
         <Description>
           <strong>{repository.full_name}</strong>
@@ -26,6 +23,8 @@ const Repository: React.FC<IRepositoryProps> = ({ repository }) => {
         <FiChevronRight size={20} />
       </Link>
     </Container>
+  ) : (
+    <Container loading />
   );
 };
 
