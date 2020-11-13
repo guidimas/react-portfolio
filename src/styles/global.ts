@@ -8,6 +8,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    overflow-y: scroll;
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
   }

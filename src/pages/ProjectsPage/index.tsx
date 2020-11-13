@@ -34,9 +34,10 @@ const ProjectsPage: React.FC = () => {
         <Repositories>
           {repositories.length === 0 ? (
             <>
-              <Repository key="0" />
-              <Repository key="1" />
-              <Repository key="2" />
+              <Repository />
+              <Repository />
+              <Repository />
+              <Repository />
             </>
           ) : (
             repositories.map(repository => (
