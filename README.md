@@ -30,7 +30,7 @@ The layout was inspired by Shakuro's work, named 'Design Freelancing Home Page I
 
 You can visit the original work on Dribbble by clicking on [this link](https://dribbble.com/shots/6696178-Design-Freelancing-Home-Page-Illustration).
 
-## Team work
+## Teamwork
 
 My thanks to:
 
