@@ -7,7 +7,7 @@ import { Page, Pages, Header, Content, Container } from './styles';
 
 interface ISidebarProps {
   visible: boolean;
-  selectedPage: 'LANDING' | 'PROJECTS' | 'MANAGER';
+  selectedPage: 'LANDING' | 'PROJECTS' | 'CONTACT';
   onClose: () => void;
 }
 
@@ -46,10 +46,10 @@ const Sidebar: React.FC<ISidebarProps> = ({
             <span>Projects</span>
           </Page>
           <Page
-            selected={selectedPage === 'MANAGER'}
-            onClick={() => handleNavigateTo('/manager')}
+            selected={selectedPage === 'CONTACT'}
+            onClick={() => handleNavigateTo('/contact')}
           >
-            <span>Manager</span>
+            <span>Contact</span>
           </Page>
         </Pages>
       </Content>

@@ -7,7 +7,7 @@ import { Container, Logo, Navigation, NavigationItem } from './styles';
 import logo from '../../assets/logo.svg';
 
 interface IHeaderProps {
-  selectedPage: 'LANDING' | 'PROJECTS' | 'MANAGER';
+  selectedPage: 'LANDING' | 'PROJECTS' | 'CONTACT';
   theme?: 'light' | 'dark';
   fixed?: boolean;
   onMenuShown: () => void;
@@ -62,11 +62,11 @@ const Header: React.FC<IHeaderProps> = ({
           Projects
         </NavigationItem>
         <NavigationItem
-          onClick={() => handleNavigateTo('/manager')}
-          selected={selectedPage === 'MANAGER'}
+          onClick={() => handleNavigateTo('/contact')}
+          selected={selectedPage === 'CONTACT'}
           theme={theme}
         >
-          Manager
+          Contact
         </NavigationItem>
       </Navigation>
       <FiMenu size={24} onClick={onMenuShown} />
