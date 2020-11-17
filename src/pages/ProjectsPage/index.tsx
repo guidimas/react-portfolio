@@ -24,7 +24,7 @@ const ProjectsPage: React.FC = () => {
       visible={isSidebarVisible}
       onClose={handleOnMenuToggle}
     >
-      <Container>
+      <Container sidebarVisible={isSidebarVisible}>
         <Header
           onMenuShown={handleOnMenuToggle}
           selectedPage="PROJECTS"

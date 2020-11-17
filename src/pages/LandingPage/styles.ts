@@ -15,13 +15,13 @@ export const Container = styled.div<ISidebarVisible>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: filter 0.2s linear;
+  transition: 0.2s filter linear 0.3s;
 
   ${({ sidebarVisible }) =>
     sidebarVisible &&
     css`
       @media (max-width: 640px) {
-        filter: blur(2px);
+        filter: blur(0.1em);
       }
     `}
 `;

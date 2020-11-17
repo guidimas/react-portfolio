@@ -4,6 +4,10 @@ interface IContentProps {
   visible: boolean;
 }
 
+interface IChildrenProps {
+  visible: boolean;
+}
+
 interface IPageProps {
   selected?: boolean;
 }
@@ -36,6 +40,7 @@ export const Content = styled.div<IContentProps>`
         ? css`
             opacity: 1;
             width: 70%;
+            overscroll-behavior: contain;
           `
         : css`
             opacity: 0;
@@ -57,12 +62,10 @@ export const Header = styled.div`
 `;
 
 export const Pages = styled.div`
-  margin-top: 128px;
+  margin-top: 64px;
+
   button + button {
     margin-top: 16px;
-  }
-  @media (max-width: 1270px) {
-    margin-top: 64px;
   }
 `;
 
@@ -70,12 +73,11 @@ export const Page = styled.button<IPageProps>`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 8px;
-  background: none;
   border: 0;
-  padding: 8px 32px;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.04), transparent);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.02), transparent);
   position: relative;
+  font-size: 14px;
+  padding: 1em 1.5em;
 
   ${({ selected }) =>
     selected
@@ -86,10 +88,5 @@ export const Page = styled.button<IPageProps>`
 
   &:hover {
     background: rgba(0, 0, 0, 0.04);
-  }
-
-  @media (max-width: 1270px) {
-    font-size: 14px;
-    padding: 8px 16px;
   }
 `;
