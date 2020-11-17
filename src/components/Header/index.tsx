@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { FiMenu } from 'react-icons/fi';
 import { Container, Logo, Navigation, NavigationItem } from './styles';
@@ -40,10 +40,12 @@ const Header: React.FC<IHeaderProps> = ({
 
   return (
     <Container fixed={fixed} transparent={headerTransparent}>
-      <Logo>
-        <img src={logo} alt="Dimas Portfolio" />
-        <h1>Dimas Portfolio</h1>
-      </Logo>
+      <Link to={{ pathname: '/' }}>
+        <Logo>
+          <img src={logo} alt="Dimas Portfolio" />
+          <h1>Dimas Portfolio</h1>
+        </Logo>
+      </Link>
       <Navigation>
         <NavigationItem
           onClick={() => handleNavigateTo('/')}

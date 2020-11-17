@@ -21,6 +21,10 @@ export default createGlobalStyle`
     font-size: 16px;
   }
 
+  a, a:focus, a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+  }
+
   h1, h2, h3, h4, h5, h6, strong {
     font-weight: bold;
   }
