@@ -19,5 +19,3 @@ export const Container = styled.div`
     font-weight: 600;
   }
 `;
-
-export const Heart = styled.span``;
