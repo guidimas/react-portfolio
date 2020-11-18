@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import Sidebar from '../../components/Sidebar';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 import {
   Container,
@@ -48,6 +49,7 @@ const ContactPage: React.FC = () => {
             </Contact>
           </Main>
         </Content>
+        <Footer />
       </Container>
     </Sidebar>
   );
