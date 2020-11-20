@@ -6,6 +6,8 @@ export default createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+    scrollbar-color: rgba(64, 61, 82, 0.6) hsla(0,0%, 100%, 0.1);
+    scrollbar-width: thin;
   }
 
   html {
