@@ -1,4 +1,6 @@
 import React, { useCallback, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 
@@ -19,11 +21,19 @@ import {
 import pic from '../../assets/illustration.svg';
 
 const LandingPage: React.FC = () => {
+  const history = useHistory();
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const handleOnMenuToggle = useCallback(() => {
     setIsSidebarVisible(oldState => !oldState);
   }, []);
+
+  const handleNavigateTo = useCallback(
+    (route: string) => {
+      history.push(route);
+    },
+    [history],
+  );
 
   return (
     <Sidebar
@@ -47,7 +57,9 @@ const LandingPage: React.FC = () => {
               are trying to find human collaborators.
               <br />— Elizabeth Gilbert
             </Description>
-            <Button>See projects</Button>
+            <Button onClick={() => handleNavigateTo('/projects')}>
+              See projects
+            </Button>
           </Left>
           <Right>
             <Image src={pic} alt="Developer" />
