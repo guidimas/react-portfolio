@@ -27,6 +27,7 @@ export const Repositories = styled.div`
   width: 100%;
   max-width: 700px;
   padding: 1em;
+  animation: fade-in 0.4s ease;
 
   > div {
     margin-bottom: 1.5em;

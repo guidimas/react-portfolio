@@ -27,6 +27,7 @@ export const Content = styled.div`
   align-items: center;
   max-width: 1200px;
   margin-bottom: 1.5em;
+  animation: fade-in 0.4s ease;
 
   @media (max-width: 700px) {
     flex-direction: column;

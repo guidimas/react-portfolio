@@ -32,6 +32,7 @@ export const Main = styled.main`
   justify-content: space-between;
   max-width: 1600px;
   padding: 2em;
+  animation: fade-in 0.4s ease;
 
   @media (max-width: 640px) {
     padding: 1em;
@@ -135,6 +136,7 @@ export const TopRight = styled.div`
   background: url(${topRight}) no-repeat top right;
   position: absolute;
   z-index: -1;
+  animation: fade-in 0.4s ease;
 
   @media (max-width: 640px) {
     display: none;
@@ -152,6 +154,7 @@ export const BottomLeft = styled.div`
   background: url(${bottomLeft}) no-repeat bottom left;
   position: absolute;
   z-index: -1;
+  animation: fade-in 0.4s ease;
 
   @media (max-width: 640px) {
     background-size: 60%;
@@ -165,6 +168,7 @@ export const BottomRight = styled.div`
   background: url(${bottomRight}) no-repeat bottom right;
   position: absolute;
   z-index: -1;
+  animation: fade-in 0.4s ease;
 
   @media (max-width: 960px) {
     display: none;
