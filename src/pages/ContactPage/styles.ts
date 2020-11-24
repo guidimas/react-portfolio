@@ -94,4 +94,8 @@ export const Image = styled.div`
       display: none;
     }
   }
+
+  img {
+    width: 100%;
+  }
 `;
