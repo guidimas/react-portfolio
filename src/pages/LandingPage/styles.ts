@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import ellipse from '../../assets/ellipse.svg';
 import topRight from '../../assets/top-right.svg';
@@ -8,6 +8,13 @@ import bottomRight from '../../assets/bottom-right.svg';
 interface ISidebarVisible {
   sidebarVisible?: boolean;
 }
+
+const titleAnimation = keyframes`
+  from {
+    width: 0;
+    opacity: 0;
+  }
+`;
 
 export const Container = styled.div<ISidebarVisible>`
   min-height: 100vh;
@@ -55,13 +62,46 @@ export const Title = styled.h2`
   font-size: 80px;
   line-height: 90px;
   transition: font-size 0.2s linear;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #78d0d3;
+    opacity: 0.75;
+    height: 50px;
+    width: 370px;
+    bottom: 0;
+    left: -10px;
+    z-index: -1;
+    animation: ${titleAnimation} 1s ease-out;
+  }
 
   @media (max-width: 1200px) {
     font-size: 70px;
     line-height: 60px;
+
+    &:before {
+      left: -5px;
+      bottom: -5px;
+      width: 330px;
+    }
+  }
+
+  @media (max-width: 960px) {
+    &:before {
+      display: none;
+    }
   }
 
   @media (max-width: 640px) {
+    &:before {
+      display: block;
+      width: 280px;
+      bottom: 0;
+    }
+
     font-size: 60px;
     line-height: 70px;
   }
